@@ -30,4 +30,3 @@ Main.propTypes = {
 };
 
 export default  Main;
-git
