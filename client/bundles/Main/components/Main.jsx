@@ -2,25 +2,13 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Calibers from './Ammo/Calibers'
 
-const Main = ({ name, updateName }) => (
+const Main = ({ name }) => (
     <div>
         <h3>
             Hello, {name}! How is going on?
         </h3>
         <hr />
-        <form >
-            <label htmlFor="name">
-                Say hello to:
-            </label>
-            <input
-                id="name"
-                type="text"
-                value={name}
-                onChange={(e) => updateName(e.target.value)}
-            />
-        </form>
-
-        <Calibers/>
+        <Calibers />
     </div>
 );
 
@@ -30,4 +18,3 @@ Main.propTypes = {
 };
 
 export default  Main;
-git
