@@ -1,0 +1,2 @@
+class Bullet < ApplicationRecord
+end

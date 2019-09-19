@@ -1,0 +1,2 @@
+class Caliber < ApplicationRecord
+end

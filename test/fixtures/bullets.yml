@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  caliber_id: 1
+  gun_id: 1
+  penetration: 1
+  damage: 1
+  armor_damage: 1
+  frag_chance: 1.5
+  muzzle_velocity: 1
+  tracer: false
+  subsonic: false
+
+two:
+  caliber_id: 1
+  gun_id: 1
+  penetration: 1
+  damage: 1
+  armor_damage: 1
+  frag_chance: 1.5
+  muzzle_velocity: 1
+  tracer: false
+  subsonic: false
