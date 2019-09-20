@@ -6,10 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 #
-
-calibers = ['12x70', '4.6x30', '9x18', '9x19', '9x21', '9x39', '.366 TKM', '7.62x25', '7.62x39', '7.62x51', '7.62x54R', '5.45x39', '5.45x45', '20x70']
-calibers.each{|caliber| Caliber.create(name: caliber, gun_id: nil, bullet_id: nil)}
-
+#
 bullets = [[1,'Slug'],
            [1,'Buckshot'],
            [1,'RIP'],
@@ -86,6 +83,24 @@ bullets = [[1,'Slug'],
            [14, 'Buckshot']
 ]
 
-bullets.each{|bullet| Bullet.create(caliber_id: bullet[0], name: bullet[1], gun_id: nil)}
+calibers = ['12x70', '4.6x30', '9x18', '9x19', '9x21', '9x39', '.366 TKM', '7.62x25', '7.62x39', '7.62x51', '7.62x54R', '5.45x39', '5.45x45', '20x70']
+calibers.each{|caliber| Caliber.create(name: caliber)}
+
+guns = [[13, 'M4A1'], [12, 'AK-47M'], [13,'HK416A1'], [10,'M1A']]
+guns.each do |gun|
+  big_gun = Gun.create(caliber_id: gun[0], name: gun[1])
+
+  bullets.each do |bullet|
+    if bullet[0] == big_gun.caliber_id
+      Bullet.create(caliber_id: bullet[0], gun_id: big_gun.id,  name: bullet[1])
+    else
+      Bullet.create(caliber_id: bullet[0], gun_id: nil,  name: bullet[1])
+    end
+  end
+
+end
+
+
+
 
 

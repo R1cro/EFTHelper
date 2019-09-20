@@ -4,7 +4,7 @@ class CreateBullets < ActiveRecord::Migration[6.0]
       t.string :name
       t.text :description
       t.references :caliber, null: false, foreign_key: true
-      t.references :gun, null: false, foreign_key: true
+      t.integer :gun, null: true, foreign_key: true
       t.integer :penetration
       t.integer :damage
       t.integer :armor_damage

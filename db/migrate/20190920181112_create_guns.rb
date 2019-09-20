@@ -2,7 +2,7 @@ class CreateGuns < ActiveRecord::Migration[6.0]
   def change
     create_table :guns do |t|
       t.string :name
-      t.references :caliber, null: false, foreign_key: true
+      t.integer :caliber_id
       t.boolean :foldable
       t.string :fire_mod
       t.integer :fire_rate

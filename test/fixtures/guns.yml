@@ -2,7 +2,7 @@
 
 one:
   name: MyString
-  caliber: one
+  caliber_id: 1
   foldable: false
   fire_mod: MyString
   fire_rate: 1
@@ -10,7 +10,7 @@ one:
 
 two:
   name: MyString
-  caliber: two
+  caliber_id: 1
   foldable: false
   fire_mod: MyString
   fire_rate: 1

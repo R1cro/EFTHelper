@@ -2,8 +2,8 @@
 
 one:
   name: MyString
-  gun: one
+  gun_id: 1
 
 two:
   name: MyString
-  gun: two
+  gun_id: 1

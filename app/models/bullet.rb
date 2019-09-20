@@ -1,4 +1,6 @@
 class Bullet < ApplicationRecord
   belongs_to :caliber
-  belongs_to :gun
+  has_many :guns
+
+  validates_uniqueness_of :name
 end

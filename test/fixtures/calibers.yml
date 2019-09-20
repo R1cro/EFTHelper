@@ -3,9 +3,7 @@
 one:
   name: MyString
   gun_id: 1
-  bullet_id: 1
 
 two:
   name: MyString
   gun_id: 1
-  bullet_id: 1
