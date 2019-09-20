@@ -1,0 +1,4 @@
+rails generate model Calibers name:string bullet:references gun:references
+rails generate model Weapons name:string gun:references
+rails generate model Guns name:string caliber:references foldable:boolean fire_mod:string fire_rate:integer effective_range:integer
+rails generate model Bullets name:string description:text caliber:references gun:references penetration:integer damage:integer armor_damage:integer frag_chance:integer muzzle_velocity:integer tracer:boolean subsonic:boolean

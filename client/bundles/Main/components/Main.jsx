@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import Calibers from './Ammo/Calibers'
+import Bullets from './Ammo/Bullets'
 
 const Main = ({ name }) => (
     <div>
@@ -8,7 +9,9 @@ const Main = ({ name }) => (
             Hello, {name}! How is going on?
         </h3>
         <hr />
+
         <Calibers />
+        <Bullets />
     </div>
 );
 

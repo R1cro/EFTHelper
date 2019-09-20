@@ -1,27 +1,27 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  caliber_id: 1
-  gun_id: 1
   name: MyString
   description: MyText
+  caliber: one
+  gun: one
   penetration: 1
   damage: 1
   armor_damage: 1
-  frag_chance: 1.5
+  frag_chance: 1
   muzzle_velocity: 1
   tracer: false
   subsonic: false
 
 two:
-  caliber_id: 1
-  gun_id: 1
   name: MyString
   description: MyText
+  caliber: two
+  gun: two
   penetration: 1
   damage: 1
   armor_damage: 1
-  frag_chance: 1.5
+  frag_chance: 1
   muzzle_velocity: 1
   tracer: false
   subsonic: false

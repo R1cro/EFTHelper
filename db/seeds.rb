@@ -86,6 +86,6 @@ bullets = [[1,'Slug'],
            [14, 'Buckshot']
 ]
 
-bullets.each{|bullet| Bullet.create(caliber_id: bullet[0], name: bullet[1])}
+bullets.each{|bullet| Bullet.create(caliber_id: bullet[0], name: bullet[1], gun_id: nil)}
 
 
