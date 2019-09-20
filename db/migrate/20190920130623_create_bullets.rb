@@ -3,6 +3,8 @@ class CreateBullets < ActiveRecord::Migration[6.0]
     create_table :bullets do |t|
       t.integer :caliber_id
       t.integer :gun_id
+      t.string :name
+      t.text :description
       t.integer :penetration
       t.integer :damage
       t.integer :armor_damage

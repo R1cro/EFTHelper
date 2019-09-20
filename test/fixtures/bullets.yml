@@ -3,6 +3,8 @@
 one:
   caliber_id: 1
   gun_id: 1
+  name: MyString
+  description: MyText
   penetration: 1
   damage: 1
   armor_damage: 1
@@ -14,6 +16,8 @@ one:
 two:
   caliber_id: 1
   gun_id: 1
+  name: MyString
+  description: MyText
   penetration: 1
   damage: 1
   armor_damage: 1
