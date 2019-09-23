@@ -2,8 +2,14 @@
 
 one:
   name: MyString
-  gun_id: 1
+  foldable: false
+  fire_mod: MyString
+  fire_rate: 1
+  effective_range: 1
 
 two:
   name: MyString
-  gun_id: 1
+  foldable: false
+  fire_mod: MyString
+  fire_rate: 1
+  effective_range: 1

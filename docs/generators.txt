@@ -1,4 +1,8 @@
-rails generate model Calibers name:string gun_id:integer
-rails generate model Weapons name:string gun_id:integer
-rails generate model Guns name:string caliber_id:integer foldable:boolean fire_mod:string fire_rate:integer effective_range:integer
-rails generate model Bullets name:string description:text caliber:references gun:references penetration:integer damage:integer armor_damage:integer frag_chance:integer muzzle_velocity:integer tracer:boolean subsonic:boolean
+rails generate model Calibers name:string
+rails generate model Weapons name:string
+rails generate model Guns name:string foldable:boolean fire_mod:string fire_rate:integer effective_range:integer
+rails generate model Bullets name:string description:text penetration:integer damage:integer armor_damage:integer frag_chance:integer muzzle_velocity:integer tracer:boolean subsonic:boolean
+
+rails generate migration AddRelationToCalibers bullet:references gun:references
+rails generate migration AddRelationToGuns caliber:references
+rails generate migration AddRelationToBullets caliber:references gun:references

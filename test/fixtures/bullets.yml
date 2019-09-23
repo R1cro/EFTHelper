@@ -3,8 +3,6 @@
 one:
   name: MyString
   description: MyText
-  caliber: one
-  gun: one
   penetration: 1
   damage: 1
   armor_damage: 1
@@ -16,8 +14,6 @@ one:
 two:
   name: MyString
   description: MyText
-  caliber: two
-  gun: two
   penetration: 1
   damage: 1
   armor_damage: 1
