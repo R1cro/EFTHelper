@@ -9,9 +9,6 @@ const Main = ({ name }) => (
             Hello, {name}! How is going on?
         </h3>
         <hr />
-
-        <Calibers />
-        <Bullets />
     </div>
 );
 
