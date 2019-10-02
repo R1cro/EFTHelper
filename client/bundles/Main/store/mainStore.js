@@ -1,8 +1,8 @@
 import { createStore } from 'redux';
 import mainReducer from '../reducers/mainReducer';
 
-const configureStore = (railsProps) => (
+const configureMainStore = (railsProps) => (
   createStore(mainReducer, railsProps)
 );
 
-export default configureStore;
+export default configureMainStore;

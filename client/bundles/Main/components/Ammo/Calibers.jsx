@@ -17,15 +17,27 @@ class Calibers extends React.Component {
     render(){
         let calibers = this.state.calibers.map((caliber) => {
             return(
-                <div key={caliber.id}>
-                    <p>{caliber.name}</p>
-                </div>
+                <tr key={caliber.id}>
+                    <td>{caliber.id}</td>
+                    <td>{caliber.name}</td>
+                </tr>
             )
         })
         return(
             <div>
-                <h2>Caliber list</h2>
-                {calibers}
+                <h3>Caliber list</h3>
+                <table className="responsive-table centered">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                        {calibers}
+                    </tbody>
+                </table>
             </div>
         )
     }

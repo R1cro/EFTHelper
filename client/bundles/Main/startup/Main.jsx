@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 
-import configureStore from '../store/mainStore';
+import configureMainStore from '../store/mainStore';
 import MainContainer from '../containers/MainContainer';
 import NavbarContainer from '../containers/NavbarContainer'
 import Footer from "../components/Footer";
@@ -10,10 +10,10 @@ import Footer from "../components/Footer";
 // This is how you get props from the Rails view into the redux store.
 // This code here binds your smart component to the redux store.
 const Main = (props) => (
-  <Provider store={configureStore(props)}>
+  <Provider store={configureMainStore(props)}>
     <NavbarContainer />
 
-    <MainContainer />
+    <MainContainer name={'WTF'} title={props.title}/>
 
     <Footer />
   </Provider>
