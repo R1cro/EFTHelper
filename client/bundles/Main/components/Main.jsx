@@ -4,11 +4,13 @@ import Calibers from './Ammo/Calibers'
 import Bullets from './Ammo/Bullets'
 
 const Main = ({ name }) => (
-    <div>
+    <div class="container">
         <h3>
             Hello, {name}! How is going on?
         </h3>
         <hr />
+        <Calibers />
+        {/*<Bullets/>*/}
     </div>
 );
 
