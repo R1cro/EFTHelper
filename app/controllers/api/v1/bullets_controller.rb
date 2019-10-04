@@ -4,8 +4,13 @@ class Api::V1::BulletsController < ApplicationController
   end
 
   def create
-    caliber = Bullet.create(caliber_params)
-    render json: caliber
+    bullet = Bullet.create(bullet_params)
+    render json: bullet
+  end
+
+  def show
+    bullet = Bullet.find(params[:id])
+    render json: bullet
   end
 
   def destroy
@@ -13,14 +18,14 @@ class Api::V1::BulletsController < ApplicationController
   end
 
   def update
-    caliber = Bullet.find(params[:id])
-    caliber.update_attributes(caliber_params)
-    render json: caliber
+    bullet = Bullet.find(params[:id])
+    bullet.update_attributes(bullet_params)
+    render json: bullet
   end
 
   private
 
-  def caliber_params
+  def bullet_params
     params.require(:bullet).permit(:id, :name, :caliber_id, :gun_id, :description, :penetration, :damage, :armor_damage, :frag_chance, :muzzle_velocity, :tracer, :subsonic)
   end
 end
