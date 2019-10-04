@@ -13,7 +13,7 @@ const Main = (props) => (
   <Provider store={configureMainStore(props)}>
     <NavbarContainer />
 
-    <MainContainer name={'WTF'} title={props.title}/>
+    <MainContainer name={props.name} title={props.title}/>
 
     <Footer />
   </Provider>

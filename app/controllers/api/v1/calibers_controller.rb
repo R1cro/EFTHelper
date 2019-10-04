@@ -8,6 +8,11 @@ class Api::V1::CalibersController < ApplicationController
     render json: caliber
   end
 
+  def show
+    caliber = Caliber.find(params[:id])
+    render json: caliber
+  end
+
   def destroy
     Caliber.destroy(params[:id])
   end
