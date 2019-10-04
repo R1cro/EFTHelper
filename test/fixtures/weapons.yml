@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  foldable: false
+  fire_mod: MyString
+  fire_rate: 1
+  effective_range: 1
+
+two:
+  name: MyString
+  foldable: false
+  fire_mod: MyString
+  fire_rate: 1
+  effective_range: 1

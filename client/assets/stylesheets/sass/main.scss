@@ -1,0 +1,132 @@
+@import "subpanel";
+
+@font-face {
+  font-family: "Bender";
+  src: url("fonts/Bender.woff2");
+  src: url("fonts/Bender.woff2") format("woff"),
+  url("/fonts/Bender.woff2") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+* {
+  font-family: Bender;
+}
+
+table {
+  thead {
+    border-bottom-color: var(--font-main-color);
+  }
+}
+
+:root {
+  --bg-main-color: rgb(12, 12, 12);
+  --bg-sec-color: rgb(14, 14, 14);
+  --bg-third-color: rgb(16, 16, 16);
+  --bg-fourth-color: rgb(19, 19, 19);
+  --font-main-color: rgb(134, 119, 86);
+  --font-main-color-hover: rgb(159, 145, 110);
+  --font-sec-color: rgb(200, 200, 200);
+  --font-red-color: rgb(251, 69, 69)
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0
+}
+
+body {
+  background-color: var(--bg-main-color);
+  font-family: Bender, 'sans serif';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--font-main-color)
+}
+
+a {
+  color: var(--font-main-color);
+  text-decoration: none
+}
+
+a:hover {
+  color: var(--font-sec-color)
+}
+
+input {
+  font-family: Bender, 'sans serif';
+  color: var(--font-main-color);
+  background-color: var(--bg-fourth-color);
+  border: none
+}
+
+input:focus {
+  outline: none
+}
+
+header,
+main,
+footer {
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 0 .5rem
+}
+
+main {
+  margin-top: 2rem;
+  min-height: 32rem
+}
+
+@media only screen and (max-width:500px) {
+  main {
+    margin-top: .6rem
+  }
+}
+
+h1 {
+  font-size: 1.8rem
+}
+
+.box {
+  box-sizing: border-box;
+  background-color: var(--bg-third-color);
+  padding: 2rem
+}
+
+@media only screen and (max-width:500px) {
+  .box {
+    padding: 1rem
+  }
+}
+
+.underline {
+  border-bottom: .05rem solid var(--font-main-color)
+}
+
+.underline:hover {
+  border-bottom: .05rem solid var(--font-sec-color)
+}
+
+.system-info {
+  margin: 0 auto;
+  margin-top: 6rem;
+  padding: 1rem;
+  max-width: 30rem;
+  text-align: center;
+  color: #000;
+  background-color: #cb7400;
+  opacity: .5;
+  cursor: default;
+  transition: opacity .4s linear
+}
+
+.btn {
+  background: var(--font-main-color) !important;
+  color: var(--bg-main-color);
+}
+
+.btn:hover {
+  background: var(--font-main-color-hover);
+}
+

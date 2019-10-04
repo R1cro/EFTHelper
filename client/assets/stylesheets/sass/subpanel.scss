@@ -1,0 +1,22 @@
+.subpanel {
+  background: #cb7400;
+  opacity: 0.5;
+  transition: opacity .4s linear;
+
+  .card, .card-content {
+    color: #000000 !important;
+  }
+
+  blockquote {
+    color: #000000;
+    border-left: 5px solid #000000;
+  }
+
+  .card-action {
+    border-top: 0;
+  }
+}
+
+.subpanel:hover {
+  opacity: 1
+}
