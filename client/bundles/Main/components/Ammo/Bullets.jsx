@@ -1,4 +1,5 @@
 import React from 'react';
+import { $, DataTable } from '../../libs/libs';
 
 class Bullets extends React.Component {
     constructor(props) {
@@ -11,7 +12,12 @@ class Bullets extends React.Component {
     componentDidMount() {
         fetch('/api/v1/bullets')
             .then((response) => {return response.json()})
-            .then((data) => {this.setState({ bullets: data }) });
+            .then((data) => {
+                this.setState({ bullets: data })
+                $('#bullets').DataTable();
+            });
+
+
     }
 
     render(){
@@ -34,25 +40,41 @@ class Bullets extends React.Component {
         return(
             <div>
                 <h3>Bullet list</h3>
-                <table className="responsive-table centered">
+                <table id="bullets" className="display responsive-table centered">
                     <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Penetration</th>
-                        <th>Damage</th>
-                        <th>Armor damage</th>
-                        <th>Ricochet (%)</th>
-                        <th>Fragmentation (%)</th>
-                        <th>Muzzle velocity</th>
-                        <th>Is tracer</th>
-                        <th>Is subsonic</th>
-                    </tr>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Penetration</th>
+                            <th>Damage</th>
+                            <th>Armor damage</th>
+                            <th>Ricochet (%)</th>
+                            <th>Fragmentation (%)</th>
+                            <th>Muzzle velocity</th>
+                            <th>Is tracer</th>
+                            <th>Is subsonic</th>
+                        </tr>
                     </thead>
 
                     <tbody>
-                    {bullets}
+                        {bullets}
                     </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Penetration</th>
+                            <th>Damage</th>
+                            <th>Armor damage</th>
+                            <th>Ricochet (%)</th>
+                            <th>Fragmentation (%)</th>
+                            <th>Muzzle velocity</th>
+                            <th>Is tracer</th>
+                            <th>Is subsonic</th>
+                        </tr>
+                    </tfoot>
+
                 </table>
             </div>
         )
