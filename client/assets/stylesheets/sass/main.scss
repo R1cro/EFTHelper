@@ -1,4 +1,5 @@
 @import "subpanel";
+@import "data_table";
 
 @font-face {
   font-family: "Bender";
@@ -27,7 +28,8 @@ table {
   --font-main-color: rgb(134, 119, 86);
   --font-main-color-hover: rgb(159, 145, 110);
   --font-sec-color: rgb(200, 200, 200);
-  --font-red-color: rgb(251, 69, 69)
+  --font-red-color: rgb(251, 69, 69);
+  --font-orange-color: rgb(187, 102, 0)
 }
 
 html,
@@ -115,7 +117,7 @@ h1 {
   max-width: 30rem;
   text-align: center;
   color: #000;
-  background-color: #cb7400;
+  background-color: var(--font-orange-color);
   opacity: .5;
   cursor: default;
   transition: opacity .4s linear
@@ -130,3 +132,6 @@ h1 {
   background: var(--font-main-color-hover);
 }
 
+.input-field input[type=search]:focus + label {
+  color: #000;
+}

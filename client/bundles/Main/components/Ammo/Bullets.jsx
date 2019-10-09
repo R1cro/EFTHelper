@@ -13,8 +13,13 @@ class Bullets extends React.Component {
         fetch('/api/v1/bullets')
             .then((response) => {return response.json()})
             .then((data) => {
-                this.setState({ bullets: data })
-                $('#bullets').DataTable();
+                this.setState({ bullets: data });
+                $('#bullets').DataTable({
+                    language: {
+                        searchPlaceholder: "Search bullet...",
+                        search: "",
+                    }
+                });
             });
 
 
@@ -40,11 +45,11 @@ class Bullets extends React.Component {
         return(
             <div>
                 <h3>Bullet list</h3>
-                <table id="bullets" className="display responsive-table centered">
+                <table id="bullets" className="display nowrap responsive-table centered">
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Name</th>
+                            <th data-class-name="priority">Name</th>
                             <th>Penetration</th>
                             <th>Damage</th>
                             <th>Armor damage</th>
@@ -59,22 +64,6 @@ class Bullets extends React.Component {
                     <tbody>
                         {bullets}
                     </tbody>
-
-                    <tfoot>
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Penetration</th>
-                            <th>Damage</th>
-                            <th>Armor damage</th>
-                            <th>Ricochet (%)</th>
-                            <th>Fragmentation (%)</th>
-                            <th>Muzzle velocity</th>
-                            <th>Is tracer</th>
-                            <th>Is subsonic</th>
-                        </tr>
-                    </tfoot>
-
                 </table>
             </div>
         )
