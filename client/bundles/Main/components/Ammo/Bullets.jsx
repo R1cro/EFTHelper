@@ -1,11 +1,23 @@
 import React from 'react';
-import { $, DataTable } from '../../libs/libs';
+import MaterialTable from 'material-table';
 
 class Bullets extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-           bullets: []
+            columns: [
+                { title: 'ID', field: 'id', type: 'numeric' },
+                { title: 'Name', field: 'name' },
+                { title: 'Penetration', field: 'penetration', type: 'numeric' },
+                { title: 'Damage', field: 'damage', type: 'numeric' },
+                { title: 'Armor damage', field: 'armor_damage', type: 'numeric' },
+                { title: 'Ricochet chance (%)', field: 'ricochet_chance', type: 'numeric' },
+                { title: 'Fragmentation chance (%)', field: 'frag_chance', type: 'numeric' },
+                { title: 'Muzzle velocity', field: 'muzzle_velocity', type: 'numeric' },
+                { title: 'Tracer?', field: 'tracer', type: 'boolean' },
+                { title: 'Subsonic?', field: 'subsonic', type: 'boolean' },
+            ],
+            bullets: []
         };
     }
 
@@ -14,58 +26,31 @@ class Bullets extends React.Component {
             .then((response) => {return response.json()})
             .then((data) => {
                 this.setState({ bullets: data });
-                $('#bullets').DataTable({
-                    language: {
-                        searchPlaceholder: "Search bullet...",
-                        search: "",
-                    }
-                });
             });
-
-
     }
 
-    render(){
-        let bullets = this.state.bullets.map((bullet) => {
-            return(
-                <tr key={bullet.id}>
-                    <td>{bullet.id}</td>
-                    <td>{bullet.name}</td>
-                    <td>{bullet.penetration}</td>
-                    <td>{bullet.damage}</td>
-                    <td>{bullet.armor_damage}</td>
-                    <td>{bullet.ricochet_chance}</td>
-                    <td>{bullet.frag_chance}</td>
-                    <td>{bullet.muzzle_velocity}</td>
-                    <td>{ bullet.tracer ? 'Yes' : 'No'}</td>
-                    <td>{bullet.subsonic ? 'Yes' : 'No'}</td>
-                </tr>
-            )
-        })
-        return(
-            <div>
-                <h3>Bullet list</h3>
-                <table id="bullets" className="display nowrap responsive-table centered">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th data-class-name="priority">Name</th>
-                            <th>Penetration</th>
-                            <th>Damage</th>
-                            <th>Armor damage</th>
-                            <th>Ricochet (%)</th>
-                            <th>Fragmentation (%)</th>
-                            <th>Muzzle velocity</th>
-                            <th>Is tracer</th>
-                            <th>Is subsonic</th>
-                        </tr>
-                    </thead>
+    render() {
+         let bullets = this.state.bullets.map((bullet) => {
+             return {
+                 id: bullet.id,
+                 name: bullet.name,
+                 penetration: bullet.penetration,
+                 damage: bullet.damage,
+                 armor_damage: bullet.armor_damage,
+                 ricochet_chance: bullet.ricochet_chance,
+                 frag_chance: bullet.frag_chance,
+                 muzzle_velocity: bullet.muzzle_velocity,
+                 tracer: bullet.tracer,
+                 subsonic: bullet.subsonic
+             };
+        });
 
-                    <tbody>
-                        {bullets}
-                    </tbody>
-                </table>
-            </div>
+        return (
+            <MaterialTable
+                title="Bullets"
+                columns={this.state.columns}
+                data={bullets}
+            />
         )
     }
 }
