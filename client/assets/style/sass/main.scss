@@ -1,5 +1,4 @@
 @import "subpanel";
-@import "data_table";
 
 @font-face {
   font-family: "Bender";
@@ -45,6 +44,10 @@ body {
   font-weight: 400;
   font-size: 1rem;
   color: var(--font-main-color)
+}
+
+h1, h2, h3, h4, h5, h6, input {
+  font-family: Bender !important;
 }
 
 a {
@@ -130,8 +133,4 @@ h1 {
 
 .btn:hover {
   background: var(--font-main-color-hover);
-}
-
-.input-field input[type=search]:focus + label {
-  color: #000;
 }
