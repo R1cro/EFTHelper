@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2019_09_23_130021) do
     t.index ["weapon_id"], name: "index_calibers_on_weapon_id"
   end
 
-  create_table "firearms", force: :cascade do |t|
+  create_table "Firearms", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -66,5 +66,5 @@ ActiveRecord::Schema.define(version: 2019_09_23_130021) do
   add_foreign_key "calibers", "bullets"
   add_foreign_key "calibers", "weapons"
   add_foreign_key "weapons", "calibers"
-  add_foreign_key "weapons", "firearms"
+  add_foreign_key "weapons", "Firearms"
 end
