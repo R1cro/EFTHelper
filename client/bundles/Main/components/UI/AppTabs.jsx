@@ -2,15 +2,14 @@ import React from 'react';
 import PropTypes from "prop-types";
 import Main from "../Main";
 import { makeStyles, withStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
 import Bullets from '../Ammo/Bullets';
+import Firearms from "../Firearms/Firearms";
 
 function allProps(index) {
     return {
@@ -44,8 +43,9 @@ const StyledTabs = withStyles({
         display: 'flex',
         justifyContent: 'center',
         backgroundColor: 'transparent',
+        boxShadow: 'none',
         '& > div': {
-            width: '80%',
+            width: '95%',
             backgroundColor: '#BB6600',
         },
     },
@@ -72,7 +72,8 @@ const useStyles = makeStyles(theme => ({
         padding: theme.spacing(3),
     },
     background: {
-        backgroundColor: '#0C0C0C',
+        backgroundColor: 'transparent',
+        boxShadow: 'none'
     },
 }));
 
@@ -108,33 +109,35 @@ const AppTabs = ({ title }) => {
     };
 
     return (
-        <Grid container spacing={3}>
+        <Grid container spacing={3} className={classes.background}>
             <Grid item xs={12}>
-                <Paper className={classes.paper}>
-                    <div className={classes.root}>
-                        <div className={classes.background}>
-                            <StyledTabs value={value} onChange={handleChange} aria-label="styled tabs example" variant="fullWidth">
-                                <StyledTab label="Bullets" />
-                                <StyledTab label="Firearms" disabled />
-                                <StyledTab label="Armor" disabled  />
-                            </StyledTabs>
-                            <Typography className={classes.padding} />
-                            <TabPanel value={value} index={0}>
-                                <Grid container justify="center" spacing={3}>
-                                    <Grid item xs={11}>
-                                        {<Bullets/>}
-                                    </Grid>
+                <div className={classes.root}>
+                    <div className={classes.background}>
+                        <StyledTabs value={value} onChange={handleChange} aria-label="styled tabs example" variant="fullWidth" className="tabs">
+                            <StyledTab label="Bullets" />
+                            <StyledTab label="Firearms" />
+                            <StyledTab label="Armor" disabled  />
+                        </StyledTabs>
+                        <Typography className={classes.padding} />
+                        <TabPanel value={value} index={0}>
+                            <Grid container justify="center" spacing={3}>
+                                <Grid item xs={11}>
+                                    <Bullets/>
                                 </Grid>
-                            </TabPanel>
-                            <TabPanel value={value} index={1}>
-                                Item Two
-                            </TabPanel>
-                            <TabPanel value={value} index={2}>
-                                Item Three
-                            </TabPanel>
-                        </div>
+                            </Grid>
+                        </TabPanel>
+                        <TabPanel value={value} index={1}>
+                            <Grid container justify="center" spacing={3}>
+                                <Grid item xs={11}>
+                                    <Firearms/>
+                                </Grid>
+                            </Grid>
+                        </TabPanel>
+                        <TabPanel value={value} index={2}>
+                            Item Three
+                        </TabPanel>
                     </div>
-                </Paper>
+                </div>
             </Grid>
         </Grid>
     );
