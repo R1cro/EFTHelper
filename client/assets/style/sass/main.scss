@@ -36,7 +36,8 @@ table {
   --font-main-color-hover: rgb(159, 145, 110);
   --font-sec-color: rgb(200, 200, 200);
   --font-red-color: rgb(251, 69, 69);
-  --font-orange-color: rgb(187, 102, 0)
+  --font-orange-color: rgb(187, 102, 0);
+  --font-disabled-button: rgba(187,102, 0, 0.3);
 }
 
 html,
@@ -159,7 +160,7 @@ h1 {
 
     background: url("images/background.png") no-repeat center center;
     background-size: cover;
-    opacity: 0.5;
+    opacity: 0.6;
 
     transform: scale(1.1);
   }
@@ -175,15 +176,29 @@ h1 {
     border-bottom: rgba(85, 85, 85, 0.3) solid 2px;
   }
 
-  .MuiInputBase-root .MuiToolbar-root, .MuiTypography-root {
+  .MuiInputBase-root,
+  .MuiToolbar-root,
+  .MuiTypography-root {
     font-family: Bender, 'sans serif';
     color: white !important;
   }
 
-  .MuiInput-underline:after {
-    border-bottom: 1px solid var(--font-orange-color);
+  .MuiIconButton-root:not([disabled]) {
+    color: var(--font-orange-color);
   }
 
+  .MuiIconButton-root {
+    color: var(--font-disabled-button);
+  }
+
+  .MuiInput-underline:before,
+  .MuiInput-underline:hover {
+     border-bottom: none;
+   }
+
+  .MuiInput-underline:after {
+    border-bottom: 2px solid var(--font-orange-color);
+  }
 
 }
 
