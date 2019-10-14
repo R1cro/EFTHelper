@@ -19,6 +19,9 @@ class Bullets extends React.Component {
                 { title: 'Name', field: 'name',
                     cellStyle: this.cellStyle
                 },
+                { title: 'Caliber', field: 'caliber_name',
+                    cellStyle: this.cellStyle
+                },
                 { title: 'Penetration', field: 'penetration', type: 'numeric',
                     cellStyle: this.cellStyle
                 },

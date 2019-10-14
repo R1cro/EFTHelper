@@ -1,6 +1,6 @@
 class Api::V1::BulletsController < ApplicationController
   def index
-    render json: Bullet.all
+    render json: Bullet.joins(:caliber).select('bullets.*, calibers.name AS caliber_name')
   end
 
   def create

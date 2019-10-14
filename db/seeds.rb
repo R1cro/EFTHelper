@@ -13,7 +13,7 @@ firearms.each do |firearm|
   Firearm.create(name: firearm)
 end
 
-calibers = ['12x70', '4.6x30', '9x18', '9x19', '9x21', '9x39', '.366 TKM', '7.62x25', '7.62x39', '7.62x51', '7.62x54R', '5.45x39', '5.45x45', '20x70']
+calibers = ['12x70', '4.6x30', '9x18', '9x19', '9x21', '9x39', '.366 TKM', '7.62x25', '7.62x39', '7.62x51', '7.62x54R', '5.45x39', '5.45x45 NATO', '20x70']
 calibers.each{|caliber| Caliber.create(name: caliber)}
 
 bullets = [[1, 'Slug', 165, 21, 370, 10, 100, 1, false, false], # caliber_id, name, damage, penetration, muzzle_velocity, ricochet_chance (%), frag_chance (%), armor_damage (%), tracer (boolean), subsonic (boolean)

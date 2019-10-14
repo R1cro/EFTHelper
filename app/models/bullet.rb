@@ -1,5 +1,5 @@
 class Bullet < ApplicationRecord
   validates_uniqueness_of :name
 
-  has_one :caliber
+  belongs_to :caliber
 end
