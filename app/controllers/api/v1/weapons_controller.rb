@@ -1,6 +1,6 @@
 class Api::V1::WeaponsController < ApplicationController
   def index
-    render json: Weapon.all
+    render json:  Weapon.joins(:firearm, :caliber).select('weapons.*, firearms.name AS firearm_type, calibers.name AS caliber_name')
   end
 
   def show

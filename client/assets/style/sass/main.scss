@@ -166,7 +166,9 @@ h1 {
   }
 }
 
-#bullet-table {
+#bullet-table,
+#firearm-table,
+#weapon-table {
   .MuiPaper-root {
     background-color: rgba(0, 0, 0, 0.7);
     color: white !important;

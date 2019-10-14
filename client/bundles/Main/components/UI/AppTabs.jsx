@@ -10,6 +10,7 @@ import Grid from '@material-ui/core/Grid';
 
 import Bullets from '../Ammo/Bullets';
 import Firearms from "../Firearms/Firearms";
+import Weapons from '../Firearms/Weapons/Weapons';
 
 function allProps(index) {
     return {
@@ -115,7 +116,7 @@ const AppTabs = ({ title }) => {
                     <div className={classes.background}>
                         <StyledTabs value={value} onChange={handleChange} aria-label="styled tabs example" variant="fullWidth" className="tabs">
                             <StyledTab label="Bullets" />
-                            <StyledTab label="Firearms" />
+                            <StyledTab label="Weapons" />
                             <StyledTab label="Armor" disabled  />
                         </StyledTabs>
                         <Typography className={classes.padding} />
@@ -129,7 +130,7 @@ const AppTabs = ({ title }) => {
                         <TabPanel value={value} index={1}>
                             <Grid container justify="center" spacing={3}>
                                 <Grid item xs={11}>
-                                    <Firearms/>
+                                   <Weapons/>
                                 </Grid>
                             </Grid>
                         </TabPanel>

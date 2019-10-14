@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       resources :calibers, only: [:index, :show]
       resources :bullets, only: [:index, :show]
       resources :weapons, only: [:index, :show]
+      resources :firearms, only: [:index, :show]
     end
   end
 

@@ -2,11 +2,6 @@ import React from 'react';
 import MaterialTable from 'material-table';
 
 const Table = ({columns, data, title}) => {
-    const [] = React.useState({
-        columns: columns,
-        data: data,
-    });
-
     return (
         <MaterialTable
             title={title}
@@ -28,7 +23,6 @@ const Table = ({columns, data, title}) => {
                 },
                 pageSize: 5,
                 pageSizeOptions: []
-
             }}
         />
     );

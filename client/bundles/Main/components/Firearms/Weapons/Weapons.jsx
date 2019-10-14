@@ -1,7 +1,7 @@
 import React from 'react';
-import Table from "../UI/Table";
+import Table from "../../UI/Table";
 
-class Firearms extends React.Component {
+class Weapons extends React.Component {
     constructor(props) {
         super(props);
         this.cellStyle = {
@@ -19,29 +19,41 @@ class Firearms extends React.Component {
                 { title: 'Name', field: 'name',
                     cellStyle: this.cellStyle
                 },
-                { title: 'Weapon', field: 'weapon_name',
+                { title: 'Firearm type', field: 'firearm_type',
                     cellStyle: this.cellStyle
-                }
+                },
+                { title: 'Caliber', field: 'caliber_name',
+                    cellStyle: this.cellStyle
+                },
+                { title: 'Fire mode', field: 'fire_mode',
+                    cellStyle: this.cellStyle
+                },
+                { title: 'Fire rate', field: 'fire_rate', type: 'numeric',
+                    cellStyle: this.cellStyle
+                },
+                { title: 'Foldable?', field: 'foldable', type: 'boolean',
+                    cellStyle: this.cellStyle
+                },
             ],
-            firearms: []
+            weapons: []
         };
     }
 
     componentDidMount() {
-        fetch('/api/v1/firearms')
+        fetch('/api/v1/weapons')
             .then((response) => {return response.json()})
             .then((data) => {
-                this.setState({ firearms: data });
+                this.setState({ weapons: data });
             });
     }
 
     render() {
         return (
-            <div id="firearm-table">
+            <div id="weapon-table">
                 <Table
-                    title="Firearms"
+                    title="Weapons"
                     columns={this.state.columns}
-                    data={this.state.firearms}
+                    data={this.state.weapons}
                     options={this.options}
                 />
             </div>
@@ -49,4 +61,4 @@ class Firearms extends React.Component {
     }
 }
 
-export default Firearms;
+export default Weapons;
