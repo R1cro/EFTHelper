@@ -51,7 +51,8 @@ ActiveRecord::Schema.define(version: 2019_09_23_130021) do
   create_table "weapons", force: :cascade do |t|
     t.string "name"
     t.boolean "foldable"
-    t.string "fire_mod"
+    t.boolean "single_mode"
+    t.boolean "auto_mode"
     t.integer "fire_rate"
     t.integer "effective_range"
     t.datetime "created_at", precision: 6, null: false

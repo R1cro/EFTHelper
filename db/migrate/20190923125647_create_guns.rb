@@ -3,7 +3,8 @@ class CreateGuns < ActiveRecord::Migration[6.0]
     create_table :weapons do |t|
       t.string :name
       t.boolean :foldable
-      t.string :fire_mod
+      t.boolean :single_mode
+      t.boolean :auto_mode
       t.integer :fire_rate
       t.integer :effective_range
 

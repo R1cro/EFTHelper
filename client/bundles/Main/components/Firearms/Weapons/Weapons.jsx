@@ -25,10 +25,16 @@ class Weapons extends React.Component {
                 { title: 'Caliber', field: 'caliber_name',
                     cellStyle: this.cellStyle
                 },
-                { title: 'Fire mode', field: 'fire_mode',
+                { title: 'Single mode', field: 'single_mode', type: 'boolean',
                     cellStyle: this.cellStyle
                 },
-                { title: 'Fire rate', field: 'fire_rate', type: 'numeric',
+                { title: 'Auto mode', field: 'auto_mode', type: 'boolean',
+                    cellStyle: this.cellStyle
+                },
+                { title: 'Fire rate (rpm)', field: 'fire_rate', type: 'numeric',
+                    cellStyle: this.cellStyle
+                },
+                { title: 'Fire range (meters)', field: 'effective_range',
                     cellStyle: this.cellStyle
                 },
                 { title: 'Foldable?', field: 'foldable', type: 'boolean',
