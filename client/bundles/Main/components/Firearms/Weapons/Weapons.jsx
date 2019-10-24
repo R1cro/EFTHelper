@@ -9,7 +9,8 @@ class Weapons extends React.Component {
             fontFamily: 'Bender'
         };
         this.options = {
-            pageSize: 10
+            pageSize: 10,
+            hover: true
         };
         this.state = {
             columns: [
@@ -45,6 +46,10 @@ class Weapons extends React.Component {
         };
     }
 
+    handleRowClick = (event, data) => {
+        console.log("Row clicked: ", event, data);
+    };
+
     componentDidMount() {
         fetch('/api/v1/weapons')
             .then((response) => {return response.json()})
@@ -61,6 +66,7 @@ class Weapons extends React.Component {
                     columns={this.state.columns}
                     data={this.state.weapons}
                     options={this.options}
+                    onRowClick={(event, data) => this.handleRowClick(event, data)}
                 />
             </div>
         )
