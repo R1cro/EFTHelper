@@ -1,5 +1,6 @@
 import React from 'react';
 import Table from "../../UI/Table";
+import UIModal from "../../UI/UIModal";
 
 class Weapons extends React.Component {
     constructor(props) {
@@ -13,6 +14,7 @@ class Weapons extends React.Component {
             hover: true
         };
         this.state = {
+            isModalOpen: false,
             columns: [
                 { title: 'ID', field: 'id', type: 'numeric',
                     cellStyle: this.cellStyle
@@ -42,12 +44,19 @@ class Weapons extends React.Component {
                     cellStyle: this.cellStyle
                 },
             ],
-            weapons: []
+            weapons: [],
+            modalData: {}
         };
-    }
+    };
 
     handleRowClick = (event, data) => {
-        console.log("Row clicked: ", event, data);
+        console.log("Row clicked: ", event,data);
+        this.setState({isModalOpen: true, modalData: data})
+    };
+
+    toggleModal = () => {
+        const { isModalOpen } = this.state;
+        this.setState({isModalOpen: !isModalOpen })
     };
 
     componentDidMount() {
@@ -56,18 +65,21 @@ class Weapons extends React.Component {
             .then((data) => {
                 this.setState({ weapons: data });
             });
-    }
+    };
 
     render() {
+        const {columns, weapons, isModalOpen, modalData } = this.state;
         return (
             <div id="weapon-table">
                 <Table
                     title="Weapons"
-                    columns={this.state.columns}
-                    data={this.state.weapons}
+                    columns={columns}
+                    data={weapons}
                     options={this.options}
                     onRowClick={(event, data) => this.handleRowClick(event, data)}
                 />
+
+                <UIModal isModalOpen={isModalOpen} className="ui-modal" toggleModal={this.toggleModal} modalData={modalData}/>
             </div>
         )
     }

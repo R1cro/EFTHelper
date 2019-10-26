@@ -10,7 +10,7 @@ const Table = ({columns, data, title, onRowClick}) => {
             onRowClick={onRowClick}
             options={{
                 rowStyle: {
-                    backgroundColor: 'rgba(0, 0, 0, 0.3)',
+                    backgroundColor: 'var(--bg-silver-color)',
                     borderBottom: 'none'
                 },
                 headerStyle: {
