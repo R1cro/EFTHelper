@@ -8,13 +8,16 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import TestImage1 from '../../images/weapon/M4A1.png';
-import TestImage2 from '../../images/weapon/AKS-74UN.png'
-import TestImage3 from '../../images/weapon/P226R.png'
+import TestImage2 from '../../images/weapon/AKS-74UN.png';
+import TestImage3 from '../../images/weapon/P226R.png';
+import TestImage4 from '../../images/weapon/AK-74M.png';
+import TestImage5 from '../../images/weapon/HK_416A5.png';
+
 
 
 const useStyles = makeStyles({
     card: {
-        width: '1000px',
+        width: 1000,
         outline: 'none',
         backgroundColor: 'var(--bg-silver-color)',
         border: 'rgba(85, 85, 85, 0.2) solid 2px',
@@ -22,7 +25,7 @@ const useStyles = makeStyles({
     media: {
         backgroundColor: 'var(--bg-orange-color-opacity)',
         objectFit: 'none',
-        objectPosition: '50% 15%',
+        objectPosition: '42% 15%',
     },
     cardContent: {
         backgroundColor: 'var(--bg-black-opacity)',
@@ -44,12 +47,12 @@ function UICard({data}) {
     return (
         <Card className={classes.card}>
             <CardActionArea>
-                <CardMedia // Maybe move image to div or what?
+                <CardMedia
                     className={classes.media}
                     component="img"
                     alt="Contemplative Reptile"
                     height="200"
-                    image={TestImage1} // Get from modalData
+                    image={TestImage1} // TODO: Need to resize ALL images to one static size!
                     title="Contemplative Reptile"
                 />
                 <CardContent className={classes.cardContent}>
