@@ -1,15 +1,16 @@
 import React from 'react';
 import MaterialTable from 'material-table';
 
-const Table = ({columns, data, title}) => {
+const Table = ({columns, data, title, onRowClick}) => {
     return (
         <MaterialTable
             title={title}
             columns={columns}
             data={data}
+            onRowClick={onRowClick}
             options={{
                 rowStyle: {
-                    backgroundColor: 'rgba(0, 0, 0, 0.3)',
+                    backgroundColor: 'var(--bg-silver-color)',
                     borderBottom: 'none'
                 },
                 headerStyle: {
