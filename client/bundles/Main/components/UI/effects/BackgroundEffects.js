@@ -7,6 +7,17 @@ const BackgroundEffect = () => {
         y = 0,
         friction = 1 / 30;
 
+    let dust = 10;
+
+    function addFirefly() {
+        for (let i = 0; i <= dust; i++) {
+            let elemDiv = document.createElement('div');
+            elemDiv.className = 'dust';
+
+            $('.background').append(elemDiv);
+        }
+    }
+
     function moveBackground() {
         x += (lFollowX - x) * friction;
         y += (lFollowY - y) * friction;
@@ -32,6 +43,7 @@ const BackgroundEffect = () => {
     });
 
     moveBackground();
+    addFirefly();
 
     return(null);
 };
